@@ -1,0 +1,32 @@
+{
+  "name": "@hg8496/umgfinder",
+  "version": "1.0.0",
+  "description": "A tool to find all Janitza UMGs in the specified network",
+  "main": "lib/index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "hg8496@cstolz.de",
+  "license": "MIT",
+  "dependencies": {
+    "netmask": "^1.0.6"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hg8496/umgfinder.git"
+  },
+  "keywords": [
+    "janitza",
+    "umg",
+    "nodejs"
+  ],
+  "bugs": {
+    "url": "https://github.com/hg8496/umgfinder/issues"
+  },
+  "homepage": "https://github.com/hg8496/umgfinder#readme"
+}
