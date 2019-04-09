@@ -1,6 +1,6 @@
 {
   "name": "@hg8496/umgfinder",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A tool to find all Janitza UMGs in the specified network",
   "main": "lib/index.js",
   "scripts": {
@@ -10,7 +10,7 @@
   "author": "hg8496@cstolz.de",
   "license": "MIT",
   "dependencies": {
-    "netmask": "^1.0.6"
+    "@hg8496/netmask": "^1.0.9"
   },
   "directories": {
     "lib": "lib"
