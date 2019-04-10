@@ -2,13 +2,13 @@
 A node js library to find all Janitza UMGs in the specified network.
 
 ```javascript
-const scanNetwork = require('@hg8496/umgfinder').scanNetwork;
+const scanNetwork = require('./lib').scanNetwork;
 
 async function main() {
-    return await scanNetwork('192.168.178.0/24');
+    return await scanNetwork(process.argv[2]);
 }
 
-main().then((asdf) => {
-    console.log(asdf)
+main().then((devices) => {
+    console.log(devices);
 });
 ```
