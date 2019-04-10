@@ -1,6 +1,6 @@
 {
   "name": "@hg8496/umgfinder",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A tool to find all Janitza UMGs in the specified network",
   "main": "lib/index.js",
   "scripts": {
