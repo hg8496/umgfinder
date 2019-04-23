@@ -1,11 +1,13 @@
 # umgfinder
-A node js library to find all Janitza UMGs in the specified network.
+A node js library to find all ethernet based Janitza UMGs in the specified network.
 
-```javascript
-const scanNetwork = require('./lib').scanNetwork;
+```typescript
+import { scanNetwork, IDevice }from './lib';
 
 async function main() {
-    return await scanNetwork(process.argv[2]);
+    const devices: IDevice[] = await scanNetwork(process.argv[2]);
+    console.log(devices[0]);
+    return devices;
 }
 
 main().then((devices) => {

@@ -5,16 +5,19 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A lib",
+    "postversion": "git push && git push --tags",
     "build": "tsc --build ",
-    "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier --write \"lib/**/*.ts\" \"lib/**/*.js\"",
     "lint": "tslint -p tsconfig.json"
   },
   "author": "hg8496@cstolz.de",
   "license": "MIT",
   "dependencies": {
-    "@hg8496/netmask": "^2.0.0",
-    "ts-node": "^8.1.0"
+    "@hg8496/netmask": "^2.0.0"
   },
   "files": [
     "dist"
@@ -33,7 +36,8 @@
   "keywords": [
     "janitza",
     "umg",
-    "nodejs"
+    "nodejs",
+    "typescript"
   ],
   "bugs": {
     "url": "https://github.com/hg8496/umgfinder/issues"

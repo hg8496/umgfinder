@@ -32,13 +32,12 @@ export async function scanNetwork(networkBlock: any): Promise<IDevice[]> {
             firmware: removeZeros(firmwareRaw).substr(10),
             ip: rinfo.address,
             manufacturer: removeZeros(manufacturer),
-            serialNumber: extractSerialnumber(removeZeros(serialNumberRaw)),
+            serialNumber: extractSerialNumber(removeZeros(serialNumberRaw)),
         };
         devices.push(device);
     });
 
     server.bind();
-    // server listening 0.0.0.0:?
     const block = new Netmask(networkBlock);
     const iterator = block.iterateHosts();
     for (const ip of iterator) {
@@ -54,10 +53,10 @@ function removeZeros(value: string): string {
     return value.replace(/\0/g, "");
 }
 
-function extractSerialnumber(serialraw: string): string {
-    let result: string = serialraw;
-    if (serialraw.length === 8) {
-        result = serialraw.substr(0, 4) + ":" + serialraw.substr(4);
+function extractSerialNumber(serialRaw: string): string {
+    let result: string = serialRaw;
+    if (serialRaw.length === 8) {
+        result = serialRaw.substr(0, 4) + ":" + serialRaw.substr(4);
     }
     return result;
 }
