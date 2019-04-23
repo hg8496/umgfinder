@@ -2,7 +2,8 @@
   "name": "@hg8496/umgfinder",
   "version": "1.0.3",
   "description": "A tool to find all Janitza UMGs in the specified network",
-  "main": "lib/index.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc --build ",
     "test": "echo \"Error: no test specified\" && exit 1",
