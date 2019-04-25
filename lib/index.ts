@@ -7,7 +7,7 @@ function sleep(ms: number): Promise<void> {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-export async function scanNetwork(networkBlock: any): Promise<IDevice[]> {
+export async function scanNetwork(networkBlock: string): Promise<IDevice[]> {
     const devices: IDevice[] = [];
     const server = dgram.createSocket("udp4");
 
