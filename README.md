@@ -12,6 +12,8 @@ async function main() {
 }
 
 main().then((devices) => {
-    console.log(devices);
+    devices.forEach((device) => {
+        console.log(device.deviceType, device.ip, device.serialNumber, device.firmwareVersion)
+    })
 });
 ```

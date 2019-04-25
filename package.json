@@ -17,7 +17,7 @@
   "author": "hg8496@cstolz.de",
   "license": "MIT",
   "dependencies": {
-    "@hg8496/netmask": "^2.0.2"
+    "@hg8496/netmask": "^2.0.3"
   },
   "files": [
     "dist"

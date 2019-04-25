@@ -1,17 +1,10 @@
-import { Netmask } from "@hg8496/netmask";
+import Netmask from "@hg8496/netmask";
+import IDevice from './IDevice';
+import parse from './Port1111Parser'
 import * as dgram from "dgram";
 
 function sleep(ms: number): Promise<void> {
     return new Promise(resolve => setTimeout(resolve, ms));
-}
-
-export interface IDevice {
-    manufacturer: string;
-    deviceType: string;
-    firmware: string;
-    serialNumber: string;
-    deviceName: string;
-    ip: string;
 }
 
 export async function scanNetwork(networkBlock: any): Promise<IDevice[]> {
@@ -23,18 +16,7 @@ export async function scanNetwork(networkBlock: any): Promise<IDevice[]> {
     });
 
     server.on("message", (msg, rinfo) => {
-        const [manufacturer, deviceType, firmwareRaw, , serialNumberRaw, , deviceName] = msg
-            .toString("utf8")
-            .split(",");
-        const device: IDevice = {
-            deviceName: removeZeros(deviceName),
-            deviceType: removeZeros(deviceType),
-            firmware: removeZeros(firmwareRaw).substr(10),
-            ip: rinfo.address,
-            manufacturer: removeZeros(manufacturer),
-            serialNumber: extractSerialNumber(removeZeros(serialNumberRaw)),
-        };
-        devices.push(device);
+        devices.push(parse(msg.toString("utf8"), rinfo.address));
     });
 
     server.bind();
@@ -49,14 +31,4 @@ export async function scanNetwork(networkBlock: any): Promise<IDevice[]> {
     return devices;
 }
 
-function removeZeros(value: string): string {
-    return value.replace(/\0/g, "");
-}
-
-function extractSerialNumber(serialRaw: string): string {
-    let result: string = serialRaw;
-    if (serialRaw.length === 8) {
-        result = serialRaw.substr(0, 4) + ":" + serialRaw.substr(4);
-    }
-    return result;
-}
+export { IDevice }
