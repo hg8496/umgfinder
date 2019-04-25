@@ -1,5 +1,5 @@
-import parse from '../Port1111Parser';
 import IDevice from "../IDevice";
+import parse from '../Port1111Parser';
 
 test('Empty info string', () => {
     const device: IDevice = parse("", "192.168.2.144");
