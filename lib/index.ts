@@ -1,7 +1,7 @@
 import Netmask from "@hg8496/netmask";
+import * as dgram from "dgram";
 import IDevice from './IDevice';
 import parse from './Port1111Parser'
-import * as dgram from "dgram";
 
 function sleep(ms: number): Promise<void> {
     return new Promise(resolve => setTimeout(resolve, ms));
