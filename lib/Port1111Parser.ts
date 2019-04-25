@@ -1,6 +1,6 @@
 import IDevice from "./IDevice";
 
-export default function parse(info: string, ipAddress: string) : IDevice {
+export default function parse(info: string, ipAddress: string): IDevice {
     const [manufacturer, deviceType, firmwareRaw, , serialNumberRaw, , deviceName] = info.split(",");
     return {
         deviceName: removeZeros(deviceName),
