@@ -1,6 +1,6 @@
 {
   "name": "@hg8496/umgfinder",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "A tool to find all Janitza UMGs in the specified network",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -19,7 +19,7 @@
   "author": "hg8496@cstolz.de",
   "license": "MIT",
   "dependencies": {
-    "@hg8496/netmask": "^2.0.3"
+    "@hg8496/netmask": "^2.0.4"
   },
   "files": [
     "dist"
@@ -28,15 +28,15 @@
     "umgfinder": "./dist/umgfinder.js"
   },
   "devDependencies": {
-    "@types/jest": "^24.0.11",
-    "@types/node": "^11.13.7",
-    "coveralls": "^3.0.3",
-    "jest": "^24.7.1",
-    "prettier": "^1.17.0",
+    "@types/jest": "^24.0.17",
+    "@types/node": "^11.13.19",
+    "coveralls": "^3.0.6",
+    "jest": "^24.9.0",
+    "prettier": "^1.18.2",
     "ts-jest": "^24.0.2",
-    "tslint": "^5.16.0",
+    "tslint": "^5.18.0",
     "tslint-config-prettier": "^1.18.0",
-    "typescript": "^3.4.5"
+    "typescript": "^3.5.3"
   },
   "repository": {
     "type": "git",
