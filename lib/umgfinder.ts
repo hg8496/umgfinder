@@ -16,8 +16,8 @@ async function main(): Promise<IDevice[]> {
     return await scanNetwork(process.argv[2]);
 }
 
-main().then(devices => {
-    devices.forEach(device => {
+main().then((devices) => {
+    devices.forEach((device) => {
         // tslint:disable:no-console
         console.log(device.ip, device.serialNumber, device.deviceType, device.firmwareVersion);
     });

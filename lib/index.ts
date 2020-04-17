@@ -4,14 +4,14 @@ import IDevice from "./IDevice";
 import parse from "./Port1111Parser";
 
 function sleep(ms: number): Promise<void> {
-    return new Promise(resolve => setTimeout(resolve, ms));
+    return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 export async function scanNetwork(networkBlock: string): Promise<IDevice[]> {
     const devices: IDevice[] = [];
     const server = dgram.createSocket("udp4");
 
-    server.on("error", err => {
+    server.on("error", (err) => {
         server.close();
     });
 
